@@ -1,0 +1,58 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div class="form-group example-list">
+                <div class="create-item">
+                    <button class="btn btn-btn btn-info" (click)="selectAll()">select all</button>
+                    <button class="btn btn-btn btn-success" (click)="createItem()">create item</button>
+                  </div>
+        
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Nama Siswa</h4>
+                        <p class="card-category"> Menambahkan Siswa</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-danger">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Nama
+                                    </th>
+                                    <th>
+                                        Absen
+                                    </th>
+                                    <th>
+                                        Update
+                                    </th>
+                                    <th>
+                                        Delete
+                                    </th>
+                                    <th>
+                                        Tambah
+                                    </th>
+                                </thead>
+                                <tbody *ngFor="let item of exampleItems">
+                                    <tr>
+                                        
+                                        <td class="id-column"><input placeholder="id" [value]="item.id" (input)="item.id=$event.target.value"></td>
+                                        <td><input placeholder="Nama" [value]="item.nama" (input)="item.nama=$event.target.value"></td>
+                                        <td><input placeholder="Absen" [value]="item.absen" (input)="item.absen=$event.target.value"></td>
+                                        <td><button type="button" class="btn btn-warning" (click)="updateItem(item)">Update</button></td>
+                                        <td><button type="button" class="btn btn-danger" (click)="deleteItem(item)">Delete</button></td>
+                                        <td><button type="button" class="btn btn-success" (click)="saveItem(item)" *ngIf="item.save !== undefined">Save</button></td>
+                                      </tr>
+                                </tbody>    
+                            </table>
+                        </div>
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
