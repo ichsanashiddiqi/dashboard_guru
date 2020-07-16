@@ -1,0 +1,44 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Nilai Siswa</h4>
+                        <p class="card-category">Seluruh Hasil Siswa Mengerjakan Soal</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th> 
+                                        ID
+                                    </th>
+                                    <th>
+                                        Nama Lengkap
+                                    </th>
+                                    <th>
+                                        Nilai
+                                    </th>
+                                    
+                                    <th>
+                                        Delete
+                                    </th>
+                                </thead>
+                                <tbody *ngFor="let nilaimodel of NilaiModel">
+                                    <tr>
+                                        <th scope="row">{{nilaimodel.$key}}</th>
+                                        <td>{{nilaimodel.namalengkapNilai}}</td>
+                                        <td>{{nilaimodel.nilai}}</td>                
+                                        <td><button type="button" class="btn btn-danger" (click)="ondelete(nilaimodel)">Delete</button></td>
+                                      </tr>
+                                </tbody>    
+                            </table>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            

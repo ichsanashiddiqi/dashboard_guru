@@ -21,5 +21,5 @@ export class HeaderComponent implements OnInit {
       );
     }, 300);
   }
-
+  
 }

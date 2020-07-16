@@ -1,0 +1,50 @@
+<div style="height: 100%;
+margin: 0;
+padding: 0;
+background-image: url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png);
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+min-height: 100vh;
+font-family: 'Roboto', sans-serif;">
+<mat-toolbar color="primary" class="app-header">
+  <div><a href="" target="_blank" class="positronx">VERIFIKASI EMAIL</a></div>
+  <span class="nav-tool-items">
+    <a mat-button mat-stroked-button color="accent" class="btn btn-btn btn-info" routerLink="/login" routerLinkActive="active">Log in</a>
+    <a mat-button mat-stroked-button color="accent" class="btn btn-btn btn-info" routerLink="/register-user" routerLinkActive="active">Sign-Up</a>
+  </span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+  <div class="col-md-4">
+  <div class="card">
+    <div class="card-header card-header-info">
+        <h4 class="card-title">Email Verifikasi</h4>
+        <p class="card-category">Terima Kasih telah mendaftar</p>
+    </div>
+    <div class="card-body">
+    
+      <div class="formGroup" *ngIf="authService.userData as user">
+        <p class="text-center">Kami telah mengirim email konfirmasi ke <strong>{{user.email}}</strong>.</p>
+        <p class="text-center">
+          Silakan periksa email Anda dan klik tautan untuk memverifikasi alamat email Anda.</p>
+      </div>
+      
+      <button mat-stroked-button color="accent" class="btn btn-btn btn-info" value="Reset Password" 
+      (click)="authService.SendVerificationMail()">Kirim Ulang Verifikasi</button>
+
+      <div class="redirectToLogin">
+        <span>Kembali ke halaman login? <span class="redirect" routerLink="/login">Log-In</span></span>
+      </div>
+      
+  </div>
+  </div>
+</div>
+</div>
+</div>
+
+

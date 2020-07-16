@@ -1,0 +1,61 @@
+<!-- Toolbar -->
+
+<div style="height: 100%;
+margin: 0;
+padding: 0;
+background-image: url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png);
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+min-height: 100vh;
+font-family: 'Roboto', sans-serif;">
+<mat-toolbar color="primary" class="app-header">
+  <div><a href="" target="_blank" class="positronx">LOGIN</a></div>
+  <span class="nav-tool-items">
+    <a mat-button mat-stroked-button color="accent" class="btn btn-btn btn-info" routerLink="/login" routerLinkActive="active">Log in</a>
+    <a mat-button mat-stroked-button color="accent" class="btn btn-btn btn-info" routerLink="/register-user" routerLinkActive="active">Sign-Up</a>
+  </span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+  <div class="col-md-4">
+  <div class="card">
+    <div class="card-header card-header-info">
+        <h4 class="card-title">LOGIN</h4>
+        <p class="card-category">Login Dashboard</p>
+    </div>
+    <div class="card-body">
+    
+    
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" class="formControl" #userName required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Password" class="formControl" #userPassword required type="password">
+        </mat-form-field>
+      </mat-card-content>
+      <button mat-stroked-button color="accent" class="btn btn-btn btn-info" value="Log in" 
+      (click)="authService.SignIn(userName.value, userPassword.value)">Log in</button>
+      <div class="forgotPassword">
+        <span routerLink="/forgot-password">Forgot Password? Klik Disini</span>
+      </div>
+      
+  </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+      
+  
+
+  

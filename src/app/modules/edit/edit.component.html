@@ -1,0 +1,86 @@
+
+  <div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title">Edit Soal</h4>
+                        <p class="card-category">Masukan Soal</p>
+                    </div>
+                    <div class="card-body">
+        <!-- Student's Edit Form -->
+        <h4>Masukan GIF/Gambar klik box dibawah ini</h4>
+        <div class="text-center">
+          <img [src]="imgSrc" width="350px" height="250px" (click)="fileUploader.click()">
+      </div>
+      <div class="form-group">
+        <input type="file" accept="image/x-png,image/gif,image/jpeg" [(ngModel)]="file" class="form-control" #fileUploader formControlName="url" (change)="showPreview($event)">
+         <div class="text-primary" *ngIf="isSubmitted && formControls.url.errors?.required">THis field is required.</div>
+    </div>
+        <form [formGroup]="editForm" (ngSubmit)="save()" novalidate>
+          
+              <!-- <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label>Video URL</label>
+                  <input type="text" formControlName="url" class="form-control" required>
+                  <p *ngIf="url.touched && benar.invalid" class="error"><sup>*</sup>Please enter first name</p>
+                  <p *ngIf="url.errors?.minlength" class="error"><sup>*</sup>Jawaban Benar</p>
+                </div>
+              </div> -->
+
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label>Soal</label>
+                  <input type="text" formControlName="question" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label>Jawaban Benar</label>
+                  <input type="text" formControlName="answer" class="form-control" required>
+                  <!-- <p *ngIf="benar.touched && benar.invalid" class="error"><sup>*</sup>Please enter first name</p>
+                  <p *ngIf="benar.errors?.minlength" class="error"><sup>*</sup>Jawaban Benar</p> -->
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label>Jawaban 1</label>
+                  <input type="text" formControlName="option1" class="form-control" required>
+                  <p *ngIf="option1.touched && option1.invalid" class="error"><sup>*</sup>Please provide jawaban</p>
+                  <p *ngIf="option1.errors?.pattern" class="error"><sup>*</sup>Please enter correct jawaban 1</p>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label>Jawaban 2</label>
+                  <input type="text" formControlName="option2" class="form-control" required>
+                  <p *ngIf="option2.touched && option2.invalid" class="error"><sup>*</sup>Please provide jawaban</p>
+                  <p *ngIf="option2.errors?.pattern" class="error"><sup>*</sup>Use numbers only number</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label>Jawaban 3</label>
+                  <input type="text" formControlName="option3" class="form-control" required>
+                  <p *ngIf="option3.touched && option3.invalid" class="error"><sup>*</sup>Please provide jawaban</p>
+                  <p *ngIf="option3.errors?.pattern" class="error"><sup>*</sup>Please enter correct jawaban 3</p>
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label>Jawaban 4</label>
+                  <input type="text" formControlName="option4" class="form-control" required>
+                  <p *ngIf="option4.touched && option4.invalid" class="error"><sup>*</sup>Please provide jawaban</p>
+                  <p *ngIf="option4.errors?.pattern" class="error"><sup>*</sup>Please enter correct jawaban 3</p>
+                </div>
+              </div>
+              <div class="form-group text-right">
+                <button type="submit" class="btn btn-info btn-block" [disabled]="!editForm.valid">Update Soal</button>
+              </div>
+            
+        </form><!-- Student's Edit Form ends-->
+  </div>
+  </div>
+  </div>
+      </div>
+    </div>
+  </div>

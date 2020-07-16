@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 declare const $: any;
 declare interface RouteInfo {
@@ -8,14 +10,7 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-  { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-  { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-  { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-  { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
-  { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-  { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-  { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-  { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
+ 
 ];
 
 @Component({
@@ -26,15 +21,14 @@ export const ROUTES: RouteInfo[] = [
 
 export class SidebarComponent implements OnInit {
   menuItems: any[];
-  constructor() { }
+  constructor(
+    public authService: AuthService,
+    public router: Router,
+    public ngZone: NgZone
+  ) { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+
   }
-  isMobileMenu() {
-    if ($(window).width() > 991) {
-        return false;
-    }
-    return true;
-};
+  
 }

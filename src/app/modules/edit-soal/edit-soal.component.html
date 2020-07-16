@@ -1,1 +1,46 @@
-<p>edit-soal works!</p>
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div class="card">
+                    <div class="card-header card-header-info">
+                        <h4 class="card-title ">Edit Soal</h4>
+                        <p class="card-category"> Edit Soal Aplikasi</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th> 
+                                        ID Soal
+                                    </th>
+                                    <th>
+                                        Soal
+                                    </th>
+                                    <th>
+                                        Jawaban
+                                    </th>
+                                    <th>
+                                        Update
+                                    </th>
+                                    <!-- <th>
+                                        Delete
+                                    </th> -->
+                                </thead>
+                                <tbody *ngFor="let soalmodel of SoalModel">
+                                    <tr>
+                                        <th scope="row">{{soalmodel.$key}}</th>
+                                        <td>{{soalmodel.question}}</td>
+                                        <td>{{soalmodel.answer}}</td>                
+                                        <td><button type="button" class="btn btn-warning" routerLink="/edit/{{soalmodel.$key}}">Update</button></td>
+                                        <!-- <td><button type="button" class="btn btn-danger" (click)="ondelete(soalmodel)">Delete</button></td> -->
+                                      </tr>
+                                </tbody>    
+                            </table>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
