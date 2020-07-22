@@ -11,7 +11,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DefaultModule } from './layouts/default/default.module';
 import { LoginComponent } from './components/login/login.component';
-import { TambahSoalComponent } from './modules/tambah-soal/tambah-soal.component';
 import { EditSoalComponent } from './modules/edit-soal/edit-soal.component';
 import { environment } from 'src/environments/environment';
 import { AuthService } from "./shared/services/auth.service";
@@ -30,7 +29,7 @@ import { KontakComponent } from './modules/kontak/kontak.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    TambahSoalComponent,
+    
     EditSoalComponent,
     EditComponent,
     NilaiSiswaComponent,

@@ -35,7 +35,6 @@ import { SiswaModel } from './siswa.model';
 
       UpdateSiswa(siswaModel: SiswaModel) {
         this.siswaDetail.update({
-          $key: siswaModel.$key,
           nama: siswaModel.nama,
           namalengkap: siswaModel.namalengkap,
           pass: siswaModel.pass

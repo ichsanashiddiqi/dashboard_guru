@@ -48,10 +48,6 @@ export class EditComponent implements OnInit {
       this.selectedImage = null;
     }
   }
-  // Accessing form control using getters
-  // get url() {
-  //   return this.editForm.get('url');
-  // }
   
   resetForm(){
     this.imgSrc = 'src/assets/img/save.png';
@@ -79,7 +75,7 @@ export class EditComponent implements OnInit {
   get option4() {
     return this.editForm.get('option4');
   }  
-  // Contains Reactive Form logic
+  // Form validasi
   updateStudentData() {
     this.editForm = this.fb.group({
       question: ['', Validators.required],
@@ -95,7 +91,7 @@ export class EditComponent implements OnInit {
   save() {
     
     if(this.selectedImage == null){
-      this.crudApi.UpdateStudent(this.editForm.value);       // Update student data using CRUD API
+      this.crudApi.UpdateStudent(this.editForm.value);       // Update student data dengan CRUD API
     this.router.navigate(['edit_soal']); 
     }else{
       var name = this.selectedImage.name;
@@ -113,12 +109,6 @@ export class EditComponent implements OnInit {
     ).subscribe();
   }
   }
-
-  // Below methods fire when somebody click on submit button
-  // updateForm(){
-  //   this.crudApi.UpdateStudent(this.editForm.value);       // Update student data using CRUD API
-  //   this.router.navigate(['edit_soal']);               // Navigate to student's list page when student data is updated
-  // }
 
 
 }

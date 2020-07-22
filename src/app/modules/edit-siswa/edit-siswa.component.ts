@@ -35,9 +35,6 @@ export class EditSiswaComponent implements OnInit {
 
   // Accessing form control using getters
   
-  // get $key() {
-  //   return this.editForm.get('$key');
-  // }
 
   get nama() {
     return this.editForm.get('nama');
@@ -54,7 +51,6 @@ export class EditSiswaComponent implements OnInit {
   // Contains Reactive Form logic
   updateStudentData() {
     this.editForm = this.fb.group({
-      // $key: ['', Validators.required],
       nama: ['', Validators.required],
       namalengkap: ['', Validators.required],
       pass: ['', Validators.required],
@@ -65,7 +61,7 @@ export class EditSiswaComponent implements OnInit {
   // Below methods fire when somebody click on submit button
   updateForm(){
     this.siswaService.UpdateSiswa(this.editForm.value);       // Update student data using CRUD API
-    this.router.navigate(['edit_soal']);               // Navigate to student's list page when student data is updated
+    this.router.navigate(['posts']);               // Navigate to student's list page when student data is updated
   }
 
 }

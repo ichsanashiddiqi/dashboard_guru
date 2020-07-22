@@ -9,7 +9,6 @@ import { ForgotPasswordComponent} from './components/forgot-password/forgot-pass
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 import { AuthGuard } from "../app/shared/guard/auth.guard";
-import { TambahSoalComponent } from './modules/tambah-soal/tambah-soal.component';
 import { EditSoalComponent } from './modules/edit-soal/edit-soal.component';
 import { EditComponent} from './modules/edit/edit.component';
 import { NilaiSiswaComponent } from './modules/nilai-siswa/nilai-siswa.component';
@@ -34,10 +33,6 @@ const routes: Routes = [
     path: 'posts',
     component: PostsComponent
   },
-{
-  path: 'tambah_soal',
-  component: TambahSoalComponent
-},
 {
   path: 'edit_soal',
   component: EditSoalComponent
